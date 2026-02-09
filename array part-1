@@ -1,0 +1,21 @@
+1. 977 squar of sorted array in o(n)->
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+      vector<int> res(nums.size());
+      int lef=0; 
+      int rig=nums.size()-1;
+      int mov=res.size()-1;
+       while(lef<=rig){
+        if(abs(nums[lef])<abs(nums[rig])){
+            res[mov]=nums[rig]*nums[rig];
+            rig--;
+        }else{
+            res[mov]=nums[lef]*nums[lef];
+            lef++;
+        }
+        mov--;
+       }
+       return res;
+    }
+};
