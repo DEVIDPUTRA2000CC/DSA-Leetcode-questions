@@ -38,3 +38,23 @@ public:
     return {};
     }
 };
+
+3. Remove duplicates from sorted array-|| ->
+
+Input: nums = [1,1,1,2,2,3]
+Output: 5, nums = [1,1,2,2,3,_]
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int index = 1;
+        for(int i = 1; i < nums.size(); i++) {
+            if(i == 1 || nums[index-2] != nums[i]) {
+                nums[index++] = nums[i];
+            }
+        }for(int i=index; i<nums.size(); i++){
+            nums[i]=nums[i-index];
+        }
+        return index;
+    }
+};
