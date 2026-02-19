@@ -1,4 +1,5 @@
-//sliding window problems
+//sliding window problems\
+//q 643
 class Solution {
 public:
     double findMaxAverage(vector<int>& nums, int k) {
